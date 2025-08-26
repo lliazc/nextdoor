@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://vwibqdjo1fvw"]
+[gd_scene load_steps=5 format=3 uid="uid://vwibqdjo1fvw"]
 
 [ext_resource type="Script" uid="uid://cilvgffpu4oln" path="res://scripts/corredor.gd" id="1_pgo70"]
 [ext_resource type="Texture2D" uid="uid://djoevn202gxbp" path="res://cenarios/corredor.png" id="1_svw4n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_svw4n"]
-size = Vector2(186.311, 625.727)
+size = Vector2(194.85, 630.793)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgo70"]
+size = Vector2(77, 391)
 
 [node name="corredor" type="Node2D"]
 script = ExtResource("1_pgo70")
@@ -14,21 +17,31 @@ position = Vector2(965, 536)
 scale = Vector2(1.26042, 1.05469)
 texture = ExtResource("1_svw4n")
 
-[node name="escritório" type="Area2D" parent="."]
+[node name="escritorio" type="Area2D" parent="."]
 
-[node name="porta2" type="CollisionShape2D" parent="escritório"]
-position = Vector2(1380.94, 538.79)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escritorio"]
+position = Vector2(1383, 586)
 rotation = -0.271506
-scale = Vector2(1, 1)
 skew = 0.286234
 shape = SubResource("RectangleShape2D_svw4n")
 
-[node name="salaControle" type="Area2D" parent="."]
-position = Vector2(-1144, 2)
+[node name="SalaControle" type="Area2D" parent="."]
 
-[node name="porta" type="CollisionShape2D" parent="salaControle"]
-position = Vector2(1382.26, 562.961)
-rotation = 0.394011
-scale = Vector2(1, 1)
-skew = -0.401426
-shape = SubResource("RectangleShape2D_svw4n")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SalaControle"]
+position = Vector2(515.5, 566.5)
+rotation = 0.200648
+skew = -0.20944
+shape = SubResource("RectangleShape2D_pgo70")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique par interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://yhxyvil3dyfs"]
+
+[ext_resource type="Script" uid="uid://ddkdcxg4uovfq" path="res://scripts/quarto_1.gd" id="1_85lka"]
+[ext_resource type="Texture2D" uid="uid://dkh1q1drpa5s" path="res://cenarios/quarto1.png" id="1_gjxrd"]
+[ext_resource type="Script" uid="uid://dnvuby57mngkn" path="res://scripts/obj_quarto/porta.gd" id="3_6omrf"]
+[ext_resource type="Script" uid="uid://bqpfy3gclkmt7" path="res://scripts/obj_quarto/mala.gd" id="4_2b215"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jctm2"]
+size = Vector2(405, 707)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85lka"]
+size = Vector2(307, 124)
+
+[node name="quarto1" type="Node2D"]
+script = ExtResource("1_85lka")
+
+[node name="Quarto1" type="Sprite2D" parent="."]
+position = Vector2(962, 539.5)
+scale = Vector2(0.627604, 0.528241)
+texture = ExtResource("1_gjxrd")
+metadata/_edit_lock_ = true
+
+[node name="porta" type="Area2D" parent="."]
+script = ExtResource("3_6omrf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
+position = Vector2(354.5, 453.5)
+shape = SubResource("RectangleShape2D_jctm2")
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique par interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="mala" type="Area2D" parent="."]
+script = ExtResource("4_2b215")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mala"]
+position = Vector2(1361, 858)
+shape = SubResource("RectangleShape2D_85lka")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

@@ -4,6 +4,12 @@ extends Node2D
 @onready var hover_label: Label = $Label
 
 func _ready():
+	if hover_label:
+		hover_label
+	$mala.mouse_entered.connect(_on_mouse_entered)
+	$mala.mouse_exited.connect(_on_mouse_exited)
+	$mala.input_event.connect(_on_input_event)
+	
 	$porta.mouse_entered.connect(_on_mouse_entered)
 	$porta.mouse_exited.connect(_on_mouse_exited)
 	$porta.input_event.connect(_on_input_event)
