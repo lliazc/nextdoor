@@ -1,0 +1,34 @@
+[gd_scene load_steps=4 format=3 uid="uid://yhxyvil3dyfs"]
+
+[ext_resource type="Script" uid="uid://ddkdcxg4uovfq" path="res://scripts/quarto_1.gd" id="1_85lka"]
+[ext_resource type="Texture2D" uid="uid://dkh1q1drpa5s" path="res://cenarios/quarto1.png" id="1_gjxrd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jctm2"]
+size = Vector2(405, 707)
+
+[node name="quarto1" type="Node2D"]
+script = ExtResource("1_85lka")
+scene_to_load = null
+hover_text = null
+
+[node name="Quarto1" type="Sprite2D" parent="."]
+position = Vector2(962, 540.5)
+scale = Vector2(0.627604, 0.525463)
+texture = ExtResource("1_gjxrd")
+
+[node name="porta" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="porta"]
+position = Vector2(354.5, 453.5)
+shape = SubResource("RectangleShape2D_jctm2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 807.0
+offset_top = 25.0
+offset_right = 1063.0
+offset_bottom = 88.0
+theme_override_font_sizes/font_size = 21
+text = "Clique par interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://b0s6ycpk0otrr"]
+
+[ext_resource type="Texture2D" uid="uid://wcngcauvhqmp" path="res://cenarios/salaControle.png" id="1_cs8ux"]
+
+[node name="salaControl" type="Node2D"]
+
+[node name="SalaControle" type="Sprite2D" parent="."]
+position = Vector2(960, 539)
+scale = Vector2(1.25521, 1.06445)
+texture = ExtResource("1_cs8ux")

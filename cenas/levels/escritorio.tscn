@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://oa76dkpjvoys"]
+
+[ext_resource type="Texture2D" uid="uid://cr85ctc3xs13n" path="res://cenarios/escritorio.png" id="1_h3mv8"]
+
+[node name="escritorio" type="Node2D"]
+
+[node name="Escritorio" type="Sprite2D" parent="."]
+position = Vector2(962, 546.5)
+scale = Vector2(1.2513, 1.0459)
+texture = ExtResource("1_h3mv8")
