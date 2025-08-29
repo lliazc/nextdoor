@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://yhxyvil3dyfs"]
+[gd_scene load_steps=10 format=3 uid="uid://yhxyvil3dyfs"]
 
 [ext_resource type="Script" uid="uid://ddkdcxg4uovfq" path="res://scripts/quarto_1.gd" id="1_85lka"]
 [ext_resource type="Texture2D" uid="uid://dkh1q1drpa5s" path="res://cenarios/quarto1.png" id="1_gjxrd"]
 [ext_resource type="Script" uid="uid://dnvuby57mngkn" path="res://scripts/obj_quarto/porta.gd" id="3_6omrf"]
 [ext_resource type="Script" uid="uid://bqpfy3gclkmt7" path="res://scripts/obj_quarto/mala.gd" id="4_2b215"]
+[ext_resource type="Script" uid="uid://c8hgankhp4evf" path="res://objetos/scripts/gaveta.gd" id="5_2b215"]
+[ext_resource type="Script" uid="uid://cxebjfnimq5v" path="res://scripts/inventario.gd" id="6_4nd5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jctm2"]
 size = Vector2(405, 707)
@@ -11,12 +13,15 @@ size = Vector2(405, 707)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_85lka"]
 size = Vector2(307, 124)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6omrf"]
+size = Vector2(247, 245)
+
 [node name="quarto1" type="Node2D"]
 script = ExtResource("1_85lka")
 
 [node name="Quarto1" type="Sprite2D" parent="."]
-position = Vector2(962, 539.5)
-scale = Vector2(0.627604, 0.528241)
+position = Vector2(960.5, 538)
+scale = Vector2(0.628385, 0.52963)
 texture = ExtResource("1_gjxrd")
 metadata/_edit_lock_ = true
 
@@ -36,8 +41,7 @@ offset_bottom = 1042.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme_override_font_sizes/font_size = 21
-text = "Clique par interagir
-"
+text = "Clique para interagir"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -48,4 +52,14 @@ script = ExtResource("4_2b215")
 position = Vector2(1361, 858)
 shape = SubResource("RectangleShape2D_85lka")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="gaveta" type="Area2D" parent="."]
+script = ExtResource("5_2b215")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta"]
+position = Vector2(747.5, 655.5)
+shape = SubResource("RectangleShape2D_6omrf")
+
+[node name="coletaveis_quarto" type="Node" parent="."]
+
+[node name="inventario" type="CanvasLayer" parent="."]
+script = ExtResource("6_4nd5g")

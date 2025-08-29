@@ -5,6 +5,6 @@
 [node name="salaControl" type="Node2D"]
 
 [node name="SalaControle" type="Sprite2D" parent="."]
-position = Vector2(960, 539)
-scale = Vector2(1.25521, 1.06445)
+position = Vector2(960, 541.001)
+scale = Vector2(1.25521, 1.06836)
 texture = ExtResource("1_cs8ux")

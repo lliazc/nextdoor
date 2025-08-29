@@ -13,8 +13,8 @@ size = Vector2(77, 391)
 script = ExtResource("1_pgo70")
 
 [node name="Corredor" type="Sprite2D" parent="."]
-position = Vector2(965, 536)
-scale = Vector2(1.26042, 1.05469)
+position = Vector2(962.501, 539.499)
+scale = Vector2(1.26367, 1.06152)
 texture = ExtResource("1_svw4n")
 
 [node name="escritorio" type="Area2D" parent="."]

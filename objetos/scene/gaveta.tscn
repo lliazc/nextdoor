@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://pld3cear0mcl"]
+
+[ext_resource type="Script" uid="uid://chplsr2loasj0" path="res://objetos/scripts/gaveta2.gd" id="1_t2thp"]
+[ext_resource type="Texture2D" uid="uid://dqylpecg4vmdl" path="res://objetos/img/Gaveta sem chave fase 1.png" id="3_6ys51"]
+[ext_resource type="Script" uid="uid://xbtw4061g5m4" path="res://objetos/scripts/chave.gd" id="3_akca4"]
+[ext_resource type="Texture2D" uid="uid://d2uk21xiyfdm4" path="res://objetos/img/Chave.png" id="4_m5go1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hdivd"]
+size = Vector2(1740, 921.5)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_iiy1a"]
+radius = 82.9984
+height = 361.25
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_akca4"]
+radius = 77.0
+height = 218.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m5go1"]
+size = Vector2(188.5, 335)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtrdv"]
+size = Vector2(438.5, 498)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3l3c"]
+size = Vector2(294.5, 178)
+
+[node name="gaveta" type="Area2D"]
+script = ExtResource("1_t2thp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(913, 489.25)
+shape = SubResource("RectangleShape2D_hdivd")
+
+[node name="GavetaComChaveFase1" type="Sprite2D" parent="."]
+position = Vector2(985, 544.5)
+scale = Vector2(0.625, 0.539352)
+texture = ExtResource("3_6ys51")
+
+[node name="remedios" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="remedios"]
+position = Vector2(990, 378)
+rotation = 0.307298
+shape = SubResource("CapsuleShape2D_iiy1a")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="remedios"]
+position = Vector2(803, 411)
+rotation = 0.183764
+shape = SubResource("CapsuleShape2D_akca4")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="remedios"]
+position = Vector2(1324, 475)
+rotation = 0.382611
+shape = SubResource("RectangleShape2D_m5go1")
+
+[node name="papel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papel"]
+position = Vector2(466.75, 503)
+shape = SubResource("RectangleShape2D_gtrdv")
+
+[node name="chave" type="Area2D" parent="."]
+script = ExtResource("3_akca4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chave"]
+position = Vector2(909.75, 682)
+shape = SubResource("RectangleShape2D_n3l3c")
+
+[node name="Chave" type="Sprite2D" parent="chave"]
+position = Vector2(928, 696)
+rotation = 1.14135
+scale = Vector2(0.159274, 0.15373)
+texture = ExtResource("4_m5go1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique para interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="input_event" from="chave" to="chave" method="_on_input_event"]
+[connection signal="mouse_entered" from="chave" to="." method="_on_chave_mouse_entered"]

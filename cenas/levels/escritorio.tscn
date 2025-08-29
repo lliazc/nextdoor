@@ -5,6 +5,6 @@
 [node name="escritorio" type="Node2D"]
 
 [node name="Escritorio" type="Sprite2D" parent="."]
-position = Vector2(962, 546.5)
-scale = Vector2(1.2513, 1.0459)
+position = Vector2(962, 538.5)
+scale = Vector2(1.26302, 1.07324)
 texture = ExtResource("1_h3mv8")

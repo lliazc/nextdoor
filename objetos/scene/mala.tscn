@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=3 uid="uid://4yorrjr2giwa"]
+
+[ext_resource type="Script" uid="uid://bjbkicy3bio5u" path="res://objetos/scripts/mala2.gd" id="1_4heij"]
+[ext_resource type="Texture2D" uid="uid://ciyj5flf35r1l" path="res://cenarios/malaAberta.png" id="2_8x2uq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5lo5"]
+size = Vector2(1323, 962)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mjwov"]
+radius = 115.0
+height = 580.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehe7j"]
+size = Vector2(238.25, 210.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_85mti"]
+size = Vector2(313.5, 283)
+
+[node name="mala" type="Area2D"]
+script = ExtResource("1_4heij")
+
+[node name="area" type="CollisionShape2D" parent="."]
+z_index = 1
+position = Vector2(920.5, 545)
+shape = SubResource("RectangleShape2D_b5lo5")
+
+[node name="MalaAberta" type="Sprite2D" parent="."]
+position = Vector2(957, 541)
+scale = Vector2(1.26042, 1.07617)
+texture = ExtResource("2_8x2uq")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique para interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="boneca" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boneca"]
+position = Vector2(573, 528)
+rotation = -0.0954087
+shape = SubResource("CapsuleShape2D_mjwov")
+
+[node name="papel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="papel"]
+position = Vector2(985.125, 539.375)
+shape = SubResource("RectangleShape2D_ehe7j")
+
+[node name="fotos" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fotos"]
+position = Vector2(1381.25, 620.5)
+shape = SubResource("RectangleShape2D_85mti")

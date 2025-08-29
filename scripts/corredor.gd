@@ -1,8 +1,6 @@
 extends Node2D
 
-@onready var quarto_scene: String = "res://cenas/levels/quarto1.tscn"
-@onready var escritorio_scene: String = "res://cenas/levels/escritorio.tscn"
-@onready var control_scene: String = "res://cenas/levels/sala_control.tscn"
+@onready var scene: String = " "
 @onready var hover_label = $Label
 
 func _ready():
@@ -38,11 +36,11 @@ func _on_mouse_exited_escritorio():
 	
 func _on_input_event_escritorio(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if escritorio_scene != "res://cenas/levels/escritorio.tscn":
-			get_tree().change_scene_to_file("res://cenas/levels/escritorio.tscn")
+		scene = "res://cenas/levels/escritorio.tscn"
+		get_tree().change_scene_to_file("res://cenas/levels/escritorio.tscn")
 	
 func _on_input_event_control(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if control_scene!= "res://cenas/levels/sala_control.tscn":
-			get_tree().change_scene_to_file("res://cenas/levels/sala_control.tscn")
+		scene = "res://cenas/levels/sala_control.tscn"
+		get_tree().change_scene_to_file("res://cenas/levels/sala_control.tscn")
 	

@@ -1,6 +1,6 @@
 extends Area2D  # Ou Node2D se preferir
 
-@export var target_scene: String = "res://cenas/objetos/mala.tscn"
+@export var target_scene: String = "res://objetos/scene/mala.tscn"
 
 func _ready():
 	# Conecta os sinais se for uma Area2D
