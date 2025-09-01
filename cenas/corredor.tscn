@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://vwibqdjo1fvw"]
+[gd_scene load_steps=6 format=3 uid="uid://vwibqdjo1fvw"]
 
 [ext_resource type="Script" uid="uid://cilvgffpu4oln" path="res://scripts/corredor.gd" id="1_pgo70"]
 [ext_resource type="Texture2D" uid="uid://djoevn202gxbp" path="res://cenarios/corredor.png" id="1_svw4n"]
@@ -7,7 +7,10 @@
 size = Vector2(194.85, 630.793)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pgo70"]
-size = Vector2(77, 391)
+size = Vector2(184.636, 690.228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0ob1"]
+size = Vector2(147.567, 176.462)
 
 [node name="corredor" type="Node2D"]
 script = ExtResource("1_pgo70")
@@ -28,9 +31,9 @@ shape = SubResource("RectangleShape2D_svw4n")
 [node name="SalaControle" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SalaControle"]
-position = Vector2(515.5, 566.5)
-rotation = 0.200648
-skew = -0.20944
+position = Vector2(236.5, 567.5)
+rotation = 0.344128
+skew = -0.359538
 shape = SubResource("RectangleShape2D_pgo70")
 
 [node name="Label" type="Label" parent="."]
@@ -45,3 +48,11 @@ text = "Clique par interagir
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="quadro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quadro"]
+position = Vector2(578.155, 959.08)
+rotation = 0.43373
+skew = 0.656244
+shape = SubResource("RectangleShape2D_g0ob1")

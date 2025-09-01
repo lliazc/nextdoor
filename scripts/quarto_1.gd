@@ -4,7 +4,7 @@ extends Node2D
 @onready var hover_label: Label = $Label
 
 func _ready():
-	$Label.visible = false
+	hover_label.visible = false
 	if hover_label:
 		hover_label
 	$mala.mouse_entered.connect(_on_mouse_entered)

@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmtoxxgmexfi7"]
+
+[ext_resource type="Script" uid="uid://btv3p6vcvy17w" path="res://objetos/scripts/quadro.gd" id="1_2cw7s"]
+[ext_resource type="Texture2D" uid="uid://dkvvp367pamta" path="res://objetos/img/Quadro de frente fase 2.png" id="1_gook5"]
+[ext_resource type="Texture2D" uid="uid://g6um43qxem" path="res://objetos/img/Quadro com chave fase 2.png" id="2_ol6xr"]
+[ext_resource type="Texture2D" uid="uid://2lpu7vc5aiv6" path="res://objetos/img/Quadro sem chave fase 2.png" id="3_2cw7s"]
+[ext_resource type="Texture2D" uid="uid://cxd82eor7hstu" path="res://objetos/controles/arrow-computer-icons-curve-rotation-clip-art-rotating-arrow-5d40bb9d17dd90044f06c5ab2a48a736.png" id="5_fntk5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2qyxf"]
+size = Vector2(698, 687)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fntk5"]
+size = Vector2(361.866, 526.896)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2cw7s"]
+size = Vector2(151.392, 256.381)
+
+[node name="quadro" type="Node2D"]
+script = ExtResource("1_2cw7s")
+metadata/_edit_horizontal_guides_ = [186.0, 182.0, 885.0]
+metadata/_edit_vertical_guides_ = [1259.0, 507.0]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 1
+position = Vector2(891, 525.5)
+shape = SubResource("RectangleShape2D_2qyxf")
+
+[node name="frente" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(954.5, 542.5)
+scale = Vector2(1.38997, 1.08105)
+texture = ExtResource("1_gook5")
+
+[node name="Area2D" type="Area2D" parent="Area2D"]
+
+[node name="comchave" type="Sprite2D" parent="Area2D/Area2D"]
+position = Vector2(1245.5, 581)
+scale = Vector2(0.647135, 0.539815)
+texture = ExtResource("2_ol6xr")
+
+[node name="semchave" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(1246, 579)
+scale = Vector2(0.645312, 0.544213)
+texture = ExtResource("3_2cw7s")
+
+[node name="girar" type="Area2D" parent="."]
+position = Vector2(1399, 825)
+rotation = 1.56752
+scale = Vector2(0.279166, 0.380524)
+
+[node name="sprite2d" type="Sprite2D" parent="girar"]
+texture = ExtResource("5_fntk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="girar"]
+z_index = 2
+position = Vector2(-57.0898, -50.0689)
+shape = SubResource("RectangleShape2D_fntk5")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique para interagir"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Labelfalas" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="chave" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="chave"]
+position = Vector2(798, 691)
+scale = Vector2(0.647135, 0.539815)
+shape = SubResource("RectangleShape2D_2cw7s")
