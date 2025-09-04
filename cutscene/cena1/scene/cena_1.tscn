@@ -1,0 +1,92 @@
+[gd_scene load_steps=5 format=3 uid="uid://bf0r8lbtmsl1r"]
+
+[ext_resource type="Script" uid="uid://deud2fum5g60q" path="res://cutscene/cena1/script/cena_1.gd" id="1_3mm47"]
+
+[sub_resource type="Animation" id="Animation_ba0y6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Eu tinha acabdo de acordar..."]
+}
+
+[sub_resource type="Animation" id="Animation_oqmmw"]
+resource_name = "cutscene"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.6, 3.06667, 4.6, 6, 7.58605, 9),
+"transitions": PackedFloat32Array(0.159321, 1, 0.143587, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:text")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.06667, 6.03333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["Eu tinha acabdo de acordar...", "Não fazia ideia de onde eu estava.", "Tudo parecia tão familiar, porem ao mesmo tempo estranho..."]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wrrcq"]
+_data = {
+&"RESET": SubResource("Animation_ba0y6"),
+&"cutscene": SubResource("Animation_oqmmw")
+}
+
+[node name="cena1" type="Node2D"]
+script = ExtResource("1_3mm47")
+metadata/_edit_horizontal_guides_ = [542.0]
+metadata/_edit_vertical_guides_ = [959.0]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_wrrcq")
+}
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = 3.0
+offset_top = 499.0
+offset_right = 1933.0
+offset_bottom = 590.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 31
+text = "Eu tinha acabdo de acordar..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1927.0
+offset_bottom = 1088.0
+color = Color(0, 0, 0, 1)

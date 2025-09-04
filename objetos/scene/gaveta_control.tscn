@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://borfrnbmj7hct"]
+
+[ext_resource type="Script" uid="uid://c1ligdt5yoj1e" path="res://objetos/scripts/gaveta_control.gd" id="1_6d770"]
+[ext_resource type="Texture2D" uid="uid://dtk54xqlaxnri" path="res://objetos/img/Gaveta sem gravador fase 4.png" id="2_v65n5"]
+[ext_resource type="Texture2D" uid="uid://dy2mg7midr045" path="res://objetos/img/Gravador_com_sala_de_controle_no_fundo_fase_4-removebg-preview.png" id="3_ooroy"]
+
+[node name="gaveta_control" type="Node2D"]
+script = ExtResource("1_6d770")
+
+[node name="areagaveta" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="areagaveta"]
+z_index = 1
+polygon = PackedVector2Array(33, 128, 23, 799, 1778, 821, 1702, 115)
+
+[node name="GavetaSemGravadorFase4" type="Sprite2D" parent="areagaveta"]
+position = Vector2(949.5, 540.5)
+scale = Vector2(0.604427, 0.514352)
+texture = ExtResource("2_v65n5")
+
+[node name="gravador" type="Area2D" parent="areagaveta"]
+
+[node name="Sprite2D" type="Sprite2D" parent="areagaveta/gravador"]
+position = Vector2(1469.91, 512.5)
+rotation = -0.330602
+scale = Vector2(1.7174, 1.39507)
+texture = ExtResource("3_ooroy")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="areagaveta/gravador"]
+polygon = PackedVector2Array(1310, 366, 1498, 307, 1624, 658, 1435, 724)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique para interagir"
+horizontal_alignment = 1
+vertical_alignment = 1

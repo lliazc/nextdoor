@@ -1,0 +1,83 @@
+[gd_scene load_steps=8 format=3 uid="uid://vwibqdjo1fvw"]
+
+[ext_resource type="Script" uid="uid://cilvgffpu4oln" path="res://scripts/corredor.gd" id="1_pgo70"]
+[ext_resource type="Texture2D" uid="uid://dknq2lio4xt" path="res://cenarios/Corredor fase 2.png" id="2_g0ob1"]
+[ext_resource type="Texture2D" uid="uid://dv500sj7xwxdq" path="res://objetos/img/pixil-frame-0 (7).png" id="3_g0ob1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_svw4n"]
+size = Vector2(194.85, 630.793)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pgo70"]
+size = Vector2(184.636, 690.228)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0ob1"]
+size = Vector2(147.567, 176.462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s22ki"]
+size = Vector2(261, 336)
+
+[node name="corredor" type="Node2D"]
+script = ExtResource("1_pgo70")
+
+[node name="Corredor" type="Sprite2D" parent="."]
+position = Vector2(962.501, 539.499)
+scale = Vector2(1.26367, 1.06152)
+texture = ExtResource("2_g0ob1")
+
+[node name="escritorio" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="escritorio"]
+position = Vector2(1443, 577)
+rotation = -0.271506
+skew = 0.286234
+shape = SubResource("RectangleShape2D_svw4n")
+
+[node name="SalaControle" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SalaControle"]
+position = Vector2(167, 586)
+rotation = 0.344128
+skew = -0.359538
+shape = SubResource("RectangleShape2D_pgo70")
+
+[node name="Label" type="Label" parent="."]
+z_index = 2
+offset_left = 11.0
+offset_top = 979.0
+offset_right = 1919.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique par interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="quadro" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="quadro"]
+position = Vector2(503, 956)
+rotation = 0.43373
+skew = 0.656244
+shape = SubResource("RectangleShape2D_g0ob1")
+
+[node name="corredorluz" type="PointLight2D" parent="."]
+position = Vector2(892.5, 543.5)
+scale = Vector2(77.706, 20.9952)
+energy = 0.9
+blend_mode = 1
+texture = ExtResource("3_g0ob1")
+
+[node name="corredorluz2" type="PointLight2D" parent="."]
+position = Vector2(965, 543.5)
+scale = Vector2(29.9375, 16.7656)
+energy = 0.69
+texture = ExtResource("3_g0ob1")
+
+[node name="recepcao" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="recepcao"]
+position = Vector2(860, 508)
+scale = Vector2(1.53186, 0.979136)
+shape = SubResource("RectangleShape2D_s22ki")

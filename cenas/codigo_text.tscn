@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://k0fjbhcu2q24"]
+
+[ext_resource type="Script" uid="uid://bt17gctuw5fhn" path="res://scripts/codigo_text.gd" id="1_jauas"]
+
+[node name="codigo_text" type="Node2D"]
+script = ExtResource("1_jauas")
+
+[node name="EntradaTexto" type="LineEdit" parent="."]
+offset_left = 717.0
+offset_top = 420.0
+offset_right = 931.0
+offset_bottom = 451.0
+scale = Vector2(2.03253, 2.03253)
+theme_override_colors/font_color = Color(0.574328, 0.574328, 0.574328, 1)
+alignment = 1
+
+[node name="BotaoConfirmar" type="Button" parent="."]
+offset_left = 722.0
+offset_top = 483.0
+offset_right = 932.0
+offset_bottom = 514.0
+scale = Vector2(2.03253, 2.03253)
+text = "confirmar"

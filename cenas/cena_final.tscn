@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cf4p30a6at5oe"]
+
+[node name="cena_final" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 244.0
+offset_top = 141.0
+offset_right = 284.0
+offset_bottom = 164.0
+text = "voce  zerou o jogo"

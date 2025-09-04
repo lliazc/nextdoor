@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsli2738naka"]
+
+[ext_resource type="Script" uid="uid://cno2s105xl8re" path="res://scripts/código.gd" id="1_5nto3"]
+[ext_resource type="Texture2D" uid="uid://q6djxekfjb4v" path="res://objetos/img/Recepção fase 5.png" id="1_yul7h"]
+[ext_resource type="Texture2D" uid="uid://dv500sj7xwxdq" path="res://objetos/img/pixil-frame-0 (7).png" id="3_4qc0g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qc0g"]
+size = Vector2(474.5, 479)
+
+[node name="código" type="Node2D"]
+script = ExtResource("1_5nto3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(966.5, 537)
+scale = Vector2(1.25716, 1.05469)
+texture = ExtResource("1_yul7h")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(874, 581)
+shape = SubResource("RectangleShape2D_4qc0g")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="luz" type="PointLight2D" parent="."]
+position = Vector2(892.5, 543.5)
+scale = Vector2(77.706, 20.9952)
+energy = 0.9
+blend_mode = 1
+texture = ExtResource("3_4qc0g")
+
+[node name="luz2" type="PointLight2D" parent="."]
+position = Vector2(965, 543.5)
+scale = Vector2(29.9375, 16.7656)
+energy = 0.69
+texture = ExtResource("3_4qc0g")

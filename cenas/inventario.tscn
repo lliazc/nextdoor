@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://divpjbutjhly0"]
+[gd_scene load_steps=14 format=3 uid="uid://divpjbutjhly0"]
 
 [ext_resource type="Texture2D" uid="uid://cndau165kovsg" path="res://objetos/img/Sample-InventorySlotsSet.png" id="1_e6eor"]
 [ext_resource type="Script" uid="uid://dn8imdwwqrd6a" path="res://scripts/inventarioofc.gd" id="1_p5ggw"]
 [ext_resource type="Texture2D" uid="uid://d2uk21xiyfdm4" path="res://objetos/img/Chave.png" id="3_o1lvm"]
 [ext_resource type="Texture2D" uid="uid://00h87nii3kom" path="res://objetos/img/Código fase 1.png" id="4_o1lvm"]
+[ext_resource type="Texture2D" uid="uid://dqtx0tw4yyrur" path="res://objetos/img/Receita fase 3.png" id="5_sxulq"]
+[ext_resource type="Texture2D" uid="uid://77wsghus7gan" path="res://objetos/img/Laudo fase 3.png" id="6_2serr"]
+[ext_resource type="Texture2D" uid="uid://cn2v1dgrvsqjc" path="res://objetos/img/Tradutor dos códigos fase 5 (1).png" id="7_16ja4"]
+[ext_resource type="Texture2D" uid="uid://ks0bxh7vcu01" path="res://objetos/img/Código fase 3 (1).png" id="8_6vj1x"]
+[ext_resource type="Texture2D" uid="uid://dyof45op4ckdu" path="res://objetos/img/Dica para a receita fase 3.png" id="9_icl2r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_45pl0"]
 atlas = ExtResource("1_e6eor")
@@ -20,6 +25,21 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1pwhu"]
+atlas = ExtResource("1_e6eor")
+region = Rect2(399, 78, 21, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0drpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1pwhu")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="inventario" type="Node2D"]
 script = ExtResource("1_p5ggw")
 
@@ -27,13 +47,66 @@ script = ExtResource("1_p5ggw")
 position = Vector2(174, 1008)
 scale = Vector2(3.05, 3.05)
 sprite_frames = SubResource("SpriteFrames_p5ggw")
+frame_progress = 0.666806
 
 [node name="Chave" type="Sprite2D" parent="."]
 position = Vector2(145, 1004)
 scale = Vector2(0.03, 0.03)
 texture = ExtResource("3_o1lvm")
 
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(356, 1006.5)
+scale = Vector2(3.25138, 3.03846)
+sprite_frames = SubResource("SpriteFrames_0drpm")
+animation = &"new_animation"
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(413, 1006.5)
+scale = Vector2(3.25138, 3.03846)
+sprite_frames = SubResource("SpriteFrames_0drpm")
+animation = &"new_animation"
+
 [node name="CódigoFase1" type="Sprite2D" parent="."]
 position = Vector2(195, 1006)
 scale = Vector2(0.02, 0.02)
 texture = ExtResource("4_o1lvm")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="."]
+position = Vector2(470, 1006.5)
+scale = Vector2(3.25138, 3.03846)
+sprite_frames = SubResource("SpriteFrames_0drpm")
+animation = &"new_animation"
+
+[node name="receita" type="Sprite2D" parent="."]
+position = Vector2(250, 1005)
+scale = Vector2(0.0189757, 0.0189757)
+texture = ExtResource("5_sxulq")
+
+[node name="diagnostico" type="Sprite2D" parent="."]
+position = Vector2(303, 1007)
+scale = Vector2(0.0200602, 0.0200602)
+texture = ExtResource("6_2serr")
+
+[node name="gravador" type="Sprite2D" parent="."]
+
+[node name="tradutor" type="Sprite2D" parent="."]
+position = Vector2(470, 1008)
+scale = Vector2(-0.0261057, -0.0261057)
+texture = ExtResource("7_16ja4")
+
+[node name="codigo3" type="Sprite2D" parent="."]
+position = Vector2(411, 1006)
+rotation = -3.13564
+scale = Vector2(-0.0186247, -0.0186247)
+texture = ExtResource("8_6vj1x")
+
+[node name="dica" type="Sprite2D" parent="."]
+position = Vector2(358, 1005)
+scale = Vector2(0.00896276, 0.00805646)
+texture = ExtResource("9_icl2r")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 155.0
+offset_top = 1007.0
+offset_right = 195.0
+offset_bottom = 1030.0

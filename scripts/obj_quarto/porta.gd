@@ -1,6 +1,6 @@
 extends Area2D
 @onready var label = $"../Label"
-@export var target_scene: String = "res://cenas/corredor.tscn"
+@export var target_scene: String = "res://cutscene/corredor/cutscene_corredor.tscn"
 
 func _ready():
 	# Conecta o sinal input_event sempre

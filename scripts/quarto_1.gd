@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var scene_to_load: String = "res://cenas/corredor.tscn"
+@export var scene_to_load: String = "res://cutscene/corredor/cutscene_corredor.tscn"
 @onready var hover_label: Label = $Label
 
 func _ready():
@@ -29,5 +29,5 @@ func _on_mouse_exited():
 
 func _on_input_event(_viewport, event, _shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if scene_to_load != "res://cenas/corredor.tscn":
-			get_tree().change_scene_to_file("res://cenas/corredor.tscn")
+		if scene_to_load != "res://cutscene/corredor/cutscene_corredor.tscn":
+			get_tree().change_scene_to_file("res://cutscene/corredor/cutscene_corredor.tscn")

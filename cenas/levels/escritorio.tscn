@@ -1,10 +1,126 @@
-[gd_scene load_steps=2 format=3 uid="uid://oa76dkpjvoys"]
+[gd_scene load_steps=12 format=3 uid="uid://oa76dkpjvoys"]
 
+[ext_resource type="Script" uid="uid://c2pesm7r0ekw2" path="res://scripts/escritorio.gd" id="1_gv4p7"]
 [ext_resource type="Texture2D" uid="uid://cr85ctc3xs13n" path="res://cenarios/escritorio.png" id="1_h3mv8"]
+[ext_resource type="Texture2D" uid="uid://dv500sj7xwxdq" path="res://objetos/img/pixil-frame-0 (7).png" id="3_amjak"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gv4p7"]
+size = Vector2(101, 81)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_amjak"]
+size = Vector2(91, 75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iffbx"]
+size = Vector2(59, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahhrm"]
+size = Vector2(81, 90.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6hcv"]
+size = Vector2(323, 116)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3mv8"]
+size = Vector2(101, 107)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fab3u"]
+size = Vector2(90, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gycp"]
+size = Vector2(74, 94)
 
 [node name="escritorio" type="Node2D"]
+script = ExtResource("1_gv4p7")
+metadata/_edit_vertical_guides_ = [944.0]
+metadata/_edit_horizontal_guides_ = [925.0]
 
 [node name="Escritorio" type="Sprite2D" parent="."]
 position = Vector2(962, 538.5)
 scale = Vector2(1.26302, 1.07324)
 texture = ExtResource("1_h3mv8")
+
+[node name="papel" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="papel"]
+position = Vector2(598.5, 350.5)
+shape = SubResource("RectangleShape2D_gv4p7")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="papel"]
+position = Vector2(562.5, 463.5)
+shape = SubResource("RectangleShape2D_amjak")
+
+[node name="dica" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dica"]
+position = Vector2(427.5, 496)
+shape = SubResource("RectangleShape2D_iffbx")
+
+[node name="receita" type="Area2D" parent="."]
+position = Vector2(6, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="receita"]
+position = Vector2(696, 458.75)
+shape = SubResource("RectangleShape2D_ahhrm")
+
+[node name="Label" type="Label" parent="receita/CollisionShape2D"]
+offset_left = 823.0
+offset_top = 979.0
+offset_right = 1079.0
+offset_bottom = 1042.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 21
+text = "Clique par interagir
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+offset_left = -3.0
+offset_top = 998.0
+offset_right = 1920.0
+offset_bottom = 1028.0
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 1
+
+[node name="gaveta_escritorio" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="gaveta_escritorio"]
+position = Vector2(1444.5, 770)
+shape = SubResource("RectangleShape2D_q6hcv")
+
+[node name="laudo" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laudo"]
+position = Vector2(441.5, 366.5)
+shape = SubResource("RectangleShape2D_h3mv8")
+
+[node name="codigof3" type="Area2D" parent="."]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="codigof3"]
+position = Vector2(773, 377.5)
+shape = SubResource("RectangleShape2D_fab3u")
+
+[node name="voltar" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="voltar"]
+position = Vector2(140, 869)
+shape = SubResource("RectangleShape2D_6gycp")
+
+[node name="ColorRect" type="ColorRect" parent="voltar"]
+offset_left = 122.0
+offset_top = 844.0
+offset_right = 162.0
+offset_bottom = 884.0
+
+[node name="corredorluz" type="PointLight2D" parent="."]
+position = Vector2(892.5, 543.5)
+scale = Vector2(77.706, 20.9952)
+energy = 0.9
+blend_mode = 1
+texture = ExtResource("3_amjak")
+
+[node name="corredorluz2" type="PointLight2D" parent="."]
+position = Vector2(965, 543.5)
+scale = Vector2(29.9375, 16.7656)
+energy = 0.69
+texture = ExtResource("3_amjak")

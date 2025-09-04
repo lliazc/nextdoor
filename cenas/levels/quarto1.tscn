@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://yhxyvil3dyfs"]
+[gd_scene load_steps=14 format=3 uid="uid://yhxyvil3dyfs"]
 
 [ext_resource type="Script" uid="uid://ddkdcxg4uovfq" path="res://scripts/quarto_1.gd" id="1_85lka"]
 [ext_resource type="Texture2D" uid="uid://dkh1q1drpa5s" path="res://cenarios/quarto1.png" id="1_gjxrd"]
 [ext_resource type="Script" uid="uid://dnvuby57mngkn" path="res://scripts/obj_quarto/porta.gd" id="3_6omrf"]
 [ext_resource type="Script" uid="uid://bqpfy3gclkmt7" path="res://scripts/obj_quarto/mala.gd" id="4_2b215"]
 [ext_resource type="Script" uid="uid://c8hgankhp4evf" path="res://objetos/scripts/gaveta.gd" id="5_2b215"]
-[ext_resource type="Script" uid="uid://cxebjfnimq5v" path="res://scripts/inventario.gd" id="6_4nd5g"]
+[ext_resource type="Texture2D" uid="uid://dv500sj7xwxdq" path="res://objetos/img/pixil-frame-0 (7).png" id="6_4nd5g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jctm2"]
 size = Vector2(405, 707)
@@ -15,6 +15,20 @@ size = Vector2(307, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6omrf"]
 size = Vector2(247, 245)
+
+[sub_resource type="GDScript" id="GDScript_2b215"]
+
+[sub_resource type="Animation" id="Animation_qp1fe"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_4nd5g"]
+resource_name = "inicio"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7fnbj"]
+_data = {
+&"RESET": SubResource("Animation_qp1fe"),
+&"inicio": SubResource("Animation_4nd5g")
+}
 
 [node name="quarto1" type="Node2D"]
 script = ExtResource("1_85lka")
@@ -62,4 +76,22 @@ shape = SubResource("RectangleShape2D_6omrf")
 [node name="coletaveis_quarto" type="Node" parent="."]
 
 [node name="inventario" type="CanvasLayer" parent="."]
-script = ExtResource("6_4nd5g")
+script = SubResource("GDScript_2b215")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_7fnbj")
+}
+
+[node name="corredorluz" type="PointLight2D" parent="."]
+position = Vector2(892.5, 543.5)
+scale = Vector2(77.706, 20.9952)
+energy = 0.9
+blend_mode = 1
+texture = ExtResource("6_4nd5g")
+
+[node name="corredorluz2" type="PointLight2D" parent="."]
+position = Vector2(965, 543.5)
+scale = Vector2(29.9375, 16.7656)
+energy = 0.69
+texture = ExtResource("6_4nd5g")
